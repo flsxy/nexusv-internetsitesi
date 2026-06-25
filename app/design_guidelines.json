@@ -1,0 +1,132 @@
+{
+  "project_name": "LastV RP Community Portal",
+  "theme": {
+    "mode": "dark",
+    "archetype": "Urban Cinematic Dark",
+    "description": "Los Santos (GTA V) aesthetic: Gritty, urban, neon Los Angeles vibe with LSPD-noir darks and sunset/neon brights. High contrast, premium, cinematic gaming community look."
+  },
+  "color_palette": {
+    "background": "#050507",
+    "surface": "#12141A",
+    "surface_glass": "rgba(18, 20, 26, 0.75)",
+    "primary": "#FF3B30",
+    "primary_hover": "#FF5C53",
+    "secondary": "#007AFF",
+    "accent_yellow": "#FFD700",
+    "text_primary": "#FFFFFF",
+    "text_secondary": "#8A8F9E",
+    "border": "rgba(255, 255, 255, 0.1)"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Bebas Neue, Anton, sans-serif",
+      "weight": "400",
+      "tracking": "tracking-wide",
+      "case": "uppercase"
+    },
+    "body": {
+      "font_family": "Outfit, sans-serif",
+      "weight": "400",
+      "tracking": "tracking-normal",
+      "case": "normal"
+    },
+    "scale": {
+      "h1": "text-5xl sm:text-6xl+",
+      "h2": "text-3xl sm:text-4xl",
+      "h3": "text-xl sm:text-2xl",
+      "body": "text-base",
+      "small": "text-sm"
+    }
+  },
+  "surface_strategies": {
+    "header": "Crystal Glass: backdrop-blur-xl bg-black/60 border-b border-white/10. Sticky top.",
+    "cards": "Neumorphism mix: flat dark background (#12141A), 1px subtle border (border-white/5), hover: shadow-[0_0_20px_rgba(255,59,48,0.15)] and subtle -translate-y-1.",
+    "buttons": "Tactile, sharp edges (rounded-sm or none). Primary buttons use #FF3B30 with drop-shadow glow."
+  },
+  "layout_spacing": {
+    "philosophy": "Generous Spacing (p-6 to p-12). Bento grid for dashboards/news.",
+    "container": "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8",
+    "grid_modes": {
+      "dashboard": "grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6",
+      "gallery": "grid-cols-1 md:grid-cols-8 lg:grid-cols-12 gap-8 (Tetris Grid)"
+    }
+  },
+  "animations": {
+    "logo_animated": "CSS Keyframes: pulse-glow (drop-shadow intensity variation) + continuous slow floating (translateY -10px to 0px).",
+    "banner_animated": "Parallax effect on scroll or slow continuous CSS background-position shifting (moving clouds/skyline behind characters).",
+    "interactions": "Hover states with light glow, scale up 1.02 on cards, active scaling 0.95 on buttons.",
+    "page_transitions": "Framer Motion fade-in and slide-up (y: 20 -> 0) for page content."
+  },
+  "pages": {
+    "Landing (Login Gate)": {
+      "path": "/",
+      "layout": "Full-screen fixed Hero. Nothing else accessible without login. Moving banner background.",
+      "components": "Animated LastV Logo (centered), 'KATIL' (Join) massive primary button linking to cfx.re/join/6myege6, Login/Register form block, Discord connect button.",
+      "visuals": "Dark overlay (bg-black/60) over the Los Santos sunset background."
+    },
+    "Ana Sayfa (Homepage)": {
+      "path": "/home",
+      "layout": "Dashboard-style Bento Grid. Only accessible post-login.",
+      "components": "Welcome Widget, Server Status (Online players, IP), Latest Announcements (Haberler) preview cards."
+    },
+    "Kurallar (Rules)": {
+      "path": "/kurallar",
+      "layout": "Readability-focused narrow container (max-w-4xl).",
+      "components": "Accordion (Shadcn) or sidebar-navigated list of server RP rules."
+    },
+    "Haberler (News)": {
+      "path": "/haberler",
+      "layout": "Editorial masonry or standard card grid.",
+      "components": "Rich media cards with image, title, date, and excerpt."
+    },
+    "Harita (Map)": {
+      "path": "/harita",
+      "layout": "Immersive full-width section.",
+      "components": "Interactive map viewer (Leaflet) or a high-res pan/zoom image with custom marker pins for key locations (LSPD, Pillbox, Mağaza)."
+    },
+    "Yetkili Ekip (Staff)": {
+      "path": "/yetkili-ekip",
+      "layout": "Tetris grid or standard grid profile cards.",
+      "components": "Staff avatars, RP names, Discord tags, role badges (Kurucu, Admin, LSPD Şefi)."
+    },
+    "Mağaza (Shop)": {
+      "path": "/magaza",
+      "layout": "E-commerce focused grid.",
+      "components": "Car/Property cards with stats (Hız, Yol Tutuş), price (VIP credits), 'Satın Al' buttons. High-quality vehicle renders."
+    },
+    "Galeri (Gallery)": {
+      "path": "/galeri",
+      "layout": "Masonry or asymmetrical grid (Tetris grid).",
+      "components": "User-uploaded in-game screenshots. Lightbox for viewing. Upload photo CTA."
+    }
+  },
+  "components_instructions": {
+    "navigation": "Sticky top nav. Visible only after login. Logo left, links center (Ana Sayfa, Kurallar, Haberler, Harita, Mağaza, Galeri), Profile/Discord right.",
+    "buttons": "Shadcn Button heavily customized for 'Tactical/Gaming' look.",
+    "forms": "Shadcn forms with customized dark inputs. bg-[#0F1115] border-white/10 focus:border-[#FF3B30].",
+    "testing": "MANDATORY: Add data-testid to all interactive elements (e.g., 'katil-button', 'login-submit', 'nav-kurallar')."
+  },
+  "media": {
+    "hero_backgrounds": [
+      "https://images.unsplash.com/photo-1597982087634-9884f03198ce?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwzfHxsb3MlMjBhbmdlbGVzJTIwc3Vuc2V0JTIwcGFsbSUyMHRyZWVzfGVufDB8fHx8MTc4MjI5NTYyMnww&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1580655653885-65763b2597d0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjAzMzJ8MHwxfHNlYXJjaHwyfHxsb3MlMjBhbmdlbGVzJTIwc3Vuc2V0JTIwcGFsbSUyMHRyZWVzfGVufDB8fHx8MTc4MjI5NTYyMnww&ixlib=rb-4.1.0&q=85"
+    ],
+    "shop_cars": [
+      "https://images.unsplash.com/photo-1604705528621-81b2755a320b?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwyfHxzcG9ydHMlMjBjYXIlMjBuaWdodCUyMG5lb258ZW58MHx8fHwxNzgyMjk1NjIyfDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1596639410348-8470f7fa9f84?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjY2NzN8MHwxfHNlYXJjaHwxfHxzcG9ydHMlMjBjYXIlMjBuaWdodCUyMG5lb258ZW58MHx8fHwxNzgyMjk1NjIyfDA&ixlib=rb-4.1.0&q=85"
+    ],
+    "gallery_urban": [
+      "https://images.unsplash.com/photo-1640604542825-8d934dc2e5d1?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwyfHx1cmJhbiUyMGNpdHklMjBuaWdodCUyMHNreWxpbmV8ZW58MHx8fHwxNzgyMjk1NjIyfDA&ixlib=rb-4.1.0&q=85",
+      "https://images.unsplash.com/photo-1556379092-dca659792591?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NTJ8MHwxfHNlYXJjaHwzfHx1cmJhbiUyMGNpdHklMjBuaWdodCUyMHNreWxpbmV8ZW58MHx8fHwxNzgyMjk1NjIyfDA&ixlib=rb-4.1.0&q=85"
+    ]
+  },
+  "specific_requirements": {
+    "auth_gate": "Strictly enforced. No anonymous access past the landing page. Users must log in/register to access the application dashboard.",
+    "links": {
+      "join_server": "cfx.re/join/6myege6",
+      "discord": "https://discord.gg/UCy6g4pAWE"
+    },
+    "language": "Turkish"
+  }
+}
+
